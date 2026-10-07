@@ -24,7 +24,7 @@ export const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (!isDuplicate) {
-      props.addContact({ name, phone, email });
+      props.addContact(name, phone, email);
       setName("");
       setPhone("");
       setEmail("");
@@ -40,10 +40,21 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
+        <ContactForm 
+          name={name}
+          phone={phone}
+          email={email}
+          setName={setName}
+          setPhone={setPhone}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+          isDuplicate={isDuplicate}
+        />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList items={props.contacts} />
       </section>
     </div>
   );
