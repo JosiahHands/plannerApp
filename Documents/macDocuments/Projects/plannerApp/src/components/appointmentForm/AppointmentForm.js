@@ -9,8 +9,8 @@ const getTodayString = () => {
 
 export const AppointmentForm = ({
   contacts,
-  title,
-  setTitle,
+  name,
+  setName,
   contact,
   setContact,
   date,
@@ -28,8 +28,8 @@ export const AppointmentForm = ({
         </label>
           <input
             type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <label>
             date: 
