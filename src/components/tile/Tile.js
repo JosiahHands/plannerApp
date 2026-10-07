@@ -4,8 +4,8 @@ export const Tile = ({name, description}) => {
   return (
     <div className="tile-container">
       <p>{name}</p>
-      {description.map((desc, index) => (
-        <p className="tile" key={index}>{desc}</p>
+      {Object.values(description).map((value, index) => (
+        <p className="tile" key={index}>{value}</p>
       ))}
     </div>
   );
