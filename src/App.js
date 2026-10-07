@@ -20,8 +20,8 @@ function App() {
     setContacts((prevContacts) => [...prevContacts, { name, phone, email }]);
   };
 
-  const addAppointment = (title, contact, date, time) => {
-    setAppointments((prevAppointments) => [...prevAppointments, { title, contact, date, time }]);
+  const addAppointment = (name, contact, date, time) => {
+    setAppointments((prevAppointments) => [...prevAppointments, { name, contact, date, time }]);
   };
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
@@ -29,7 +29,7 @@ function App() {
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} addContact={addContact} /> }/>
       <Route path={ROUTES.APPOINTMENTS} element={ 
         <AppointmentsPage 
-          appointments={appointments}  
+          appointments={appointments}   
           contacts={contacts} 
           addAppointment={addAppointment} /> }/>
     </Route>
